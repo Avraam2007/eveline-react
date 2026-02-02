@@ -1,0 +1,243 @@
+@mixin sizes($width,$height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flex($fd, $jc, $ai) {
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin text($font_name, $fst, $fs, $ta : left) {
+    font-family: $font-name, $fst;
+    font-size: $fs;
+    text-align: $ta;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 1s;
+    cursor: pointer;
+
+    &:hover {
+        color: #929292;
+    }
+
+    &:focus {
+        color: #1c9ebe;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header{
+    @include sizes(100vw, 150px);
+    position: fixed;
+    background-color: rgba(11, 11, 11, 0.6);
+    backdrop-filter: blur(10px);
+
+    @include flex(row, space-around, center);
+    z-index: 5;
+}
+
+.navMain {
+    @include flex(row, center, center);
+}
+
+.languages {
+    @include sizes(200px, auto);
+    list-style: none;
+
+    @include flex(row, space-around, center);
+}
+
+.languageLink {
+    @include text('Montserrat', sans-serif, 14px);
+    color: #eeeeee;
+}
+
+.menuIcon {
+    display: none;
+    margin  : 20px auto;
+    @include sizes(20px, 14px);
+    cursor  : pointer;
+    position: relative;
+}
+
+.menuIcon span {
+    background-color: #fff;
+    height          : 2px;
+    position        : absolute;
+    width           : 100%;
+    left            : 0;
+    transition      : all 0.3s ease;
+    border-radius   : 10px;
+
+    &:first-child {
+        top: 0;
+    }
+
+    &:nth-child(2) {
+        top: 6px;
+    }
+
+    &:last-child {
+        top: 12px;
+    }
+}
+
+.menuIcon:hover span:nth-child(2) {
+    opacity: 0;
+}
+
+.menuIcon:hover span:first-child,
+.menuIcon:hover span:last-child {
+    top             : 6px;
+    background-color: red;
+}
+
+.menuIcon:hover span:first-child {
+    transform: rotate(45deg);
+}
+
+.menuIcon:hover span:last-child {
+    transform: rotate(-45deg);
+}
+
+.langContainer {
+    display: none;
+}
+
+main {
+    @include sizes(100%, auto);
+}
+
+.logo{
+    @include sizes(100px, 100px);
+    border-radius: 50%;
+    transition: 1s;
+
+    &:hover {
+        transform: scale(1.25);
+    }
+}
+
+@media (max-width: 768px) {        
+    header{
+        width: 100vw;
+        height: 150px;
+        position: fixed;
+        background-color: rgba(11, 11, 11, 0.6);
+        backdrop-filter: blur(10px);
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 5;
+    }
+    
+    .languages {
+        list-style: none;
+        width: 150px;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .languageLink {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        color: #eeeeee;
+    }
+    
+    main {
+        width: 100%;
+    }
+    
+    .logo{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        transition: 1s;
+    }
+}
+
+@media (max-width: 600px) {
+    .header{
+        width: 100vw;
+        height: 150px;
+        position: fixed;
+        background-color: rgba(11, 11, 11, 0.6);
+        backdrop-filter: blur(10px);
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 5;
+    }
+    
+    .languages {
+        list-style: none;
+        width: 150px;
+    
+        display: none;
+    }
+    
+    .LanguageLink {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        color: #eeeeee;
+    }
+
+    .menuIcon {
+        display: inline-block;
+    }
+
+    .langContainer {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+
+        width: 100%;
+        height: max-content;
+        padding: 10px 30px;
+        top: 150px;
+        left: 0;
+        background-color: rgba(11, 11, 11, 0.6);
+        border-top: 1px solid rgba(228, 228, 228, 0.6);
+        transition: .5s;
+
+        .language {
+            height: 20px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+    }
+
+    main {
+        width: 100%;
+    }
+    
+    .logo{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        transition: 1s;
+    }
+}
