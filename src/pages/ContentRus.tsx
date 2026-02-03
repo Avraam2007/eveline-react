@@ -1,38 +1,10 @@
-import { useState } from 'react';
 import styles from '../content.module.scss'
 import TradeMcWidget from '../components/trademc';
+import Timer from '../components/timer';
+import Footer from '../components/footer';
+import GoodsRus from '../components/goodsRus';
 
 function ContentRus() {
-        const [time,setTime] = useState<String>();
-        // const timerEl = useRef();
-    
-        const toTheTop = () => {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    
-        const timer = function () {
-            const countDownDate = new Date("Jun 30, 2026 00:00:00").getTime();
-            const nowDate = new Date().getTime();
-            const distance = countDownDate - nowDate;
-    
-            if (distance < 0) {
-                setTime("ЗАКОНЧИЛАСЬ!");
-                return;
-            } 
-    
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-            setTime(`${days}дн ${hours}ч ${minutes}м ${seconds}с`);
-            return;
-        }
-    
-        setInterval(timer,1000);
-    
-    
     return (
         <>
         <main className="main">
@@ -116,189 +88,9 @@ function ContentRus() {
                 <p className={styles.saleText}>В честь открытия нашего сайта вы можете найти шалкера с подарками на разных координатах. Кроме этого у нас действует скидка на все товары в размере 25%! Также лови промокод: <span className={styles.yellow}>Eveline</span>.</p>
             </div>
             <p className={styles.saleText}>До конца акции осталось</p>
-            <p id="timer" className={styles.timer}>{time}</p>
+            <Timer localization="rus"/>
         </div>
-        <div className={styles.goods}>
-            <h1 className={styles.mainTitle}>Товары</h1>
-            <ul className={styles.goodsList}>
-                <li className={styles.good}>
-                    <div className={styles.top}>
-                        <img src="./images/demon.png" alt="demon.png" className={styles.goodImage}/>
-                        <h3 className={styles.goodTitle}>Демон</h3>
-                        <ul className={styles.goodList}>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Сет Демона</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Сфера Демона</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Талисман Демона</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Префикс</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>2 точки дома</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className={styles.bottom}>
-                        <h4 className={styles.goodPrice}>20.00 ₴</h4>
-                        <div className={styles.buyBtn}>
-                            <a href="https://eveline.trademc.org" className={styles.buyLink}>Купить!*</a>
-                        </div>
-                    </div>
-                </li>
-                <li className={styles.good}>
-                    <div className={styles.top}>
-                        <img src="./images/hermes.png" alt="hermes.png" className={styles.goodImage}/>
-                        <h3 className={styles.goodTitle}>Гермес</h3>
-                        <ul className={styles.goodList}>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Сет Гермеса</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Сфера Гермеса</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Талисман Гермеса</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Префикс</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>2 точки дома</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Кирка Гермеса</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className={styles.bottom}>
-                        <h4 className={styles.goodPrice}>50.00 ₴</h4>
-                        <div className={styles.buyBtn}>
-                            <a href="https://eveline.trademc.org" className={styles.buyLink}>Купить!*</a>
-                        </div>
-                    </div>
-                </li>
-                <li className={styles.good}>
-                    <div className={styles.top}>
-                        <img src="./images/hephaestus.png" alt="hephaestus.png" className={styles.goodImage}/>
-                        <h3 className={styles.goodTitle}>Гефест</h3>
-                        <ul className={styles.goodList}>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Сет Гефеста</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Сфера Гефеста</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Талисман Гефеста</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Префикс</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>2 точки дома</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Кирка Гефеста</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Полёт на 15 минут</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className={styles.bottom}>
-                        <h4 className={styles.goodPrice}>100.00 ₴</h4>
-                        <div className={styles.buyBtn}>
-                            <a href="https://eveline.trademc.org" className={styles.buyLink}>Купить!*</a>
-                        </div>
-                    </div>
-                </li>
-                <li className={styles.good}>
-                    <div className={styles.top}>
-                        <img src="./images/hades.png" alt="hades.png" className={styles.goodImage}/>
-                        <h3 className={styles.goodTitle}>Аид</h3>
-                        <ul className={styles.goodList}>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Сет Аида</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Сфера Аида</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Талисман Аида</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Префикс</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>3 точки дома</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Кирка Аида</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Полёт на 30 минут</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Команды вылечить и накормить себя</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className={styles.bottom}>
-                        <h4 className={styles.goodPrice}>150.00 ₴</h4>
-                        <div className={styles.buyBtn}>
-                            <a href="https://eveline.trademc.org" className={styles.buyLink}>Купить!*</a>
-                        </div>
-                    </div>
-                </li>
-
-                <li className={styles.good}>
-                    <div className={styles.top}>
-                        <img src="./images/zeus.png" alt="zeus.png" className={styles.goodImage}/>
-                        <h3 className={styles.goodTitle}>Зевс</h3>
-                        <ul className={styles.goodList}>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Сет Зевса</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Сфера Зевса</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Талисман Зевса</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Префикс</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>4 точки дома</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Кирка Зевса</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Полёт на 45 минут</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Команды вылечить и накормить себя</p>
-                            </li>
-                            <li className={styles.goodAdvantage}>
-                                <p className={styles.goodDescription}>Эндер-сундук когда хочется</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className={styles.bottom}>
-                        <h4 className={styles.goodPrice}>500.00 ₴</h4>
-                        <div className={styles.buyBtn}>
-                            <a href="https://eveline.trademc.org" className={styles.buyLink}>Купить!*</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <GoodsRus/>
         <div className={styles.shop}>
             <TradeMcWidget/>
             <h2 className={styles.dontwork}>Виджет не работает?**</h2>
@@ -309,18 +101,7 @@ function ContentRus() {
             <p className={styles.ps}>  **Товар может появиться через 1-2 дня</p>
         </div>
     </main>
-    <footer>
-        <div className={styles.info}>
-            <p className={styles.footerName} onClick={toTheTop}>EVELINE</p>
-            <p className={styles.footerCopyright}>    IP: eveline.gomc.fun</p>
-            <p className={styles.footerCopyright}>    Порт: 7477</p>
-            <p className={styles.footerCopyright}>    Магазин: <a href="https://eveline.trademc.org" className={styles.footerLink1}>https://eveline.trademc.org</a></p>
-            <p className={styles.footerCopyright}>    E-mail: <a href="mailto:eveline.gomc.supp@gmail.com" className={styles.footerLink1}>eveline.gomc.supp@gmail.com</a></p>
-        </div>
-        <a href="https://discord.gg/j4zgSQ3w" className={styles.discord}><img src="./images/discord.png" alt="discord.png" className={styles.discordImg}/></a>
-    </footer>
-    {/* <script src="index_eng.js"></script>
-    <script src="burger_menu.js"></script> */}
+    <Footer localization="rus"/>
     </>
     );
 }

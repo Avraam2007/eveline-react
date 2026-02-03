@@ -246,6 +246,7 @@
 
 .good {
     @include sizes(15vw,600px);
+    min-width: fit-content;
     padding: 1vw;
 
     @include flex(column, space-between, center);

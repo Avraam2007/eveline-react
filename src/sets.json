@@ -1,0 +1,82 @@
+[
+    {
+        "id":"1",
+        "image":"./images/demon.png",
+        "shortImage":"demon.png",
+        "name":"Demon",
+        "pros": [
+            "Demon set",
+            "Demon sphere",
+            "Demon talisman",
+            "Prefix",
+            "2 set homes"
+        ],
+        "price": "20.00 ₴"
+    },
+    {
+        "id":"2",
+        "image":"./images/hermes.png",
+        "shortImage":"hermes.png",
+        "name":"Hermes",
+        "pros": [
+            "Hermes set",
+            "Hermes sphere",
+            "Hermes talisman",
+            "Prefix",
+            "2 set homes",
+            "Hermes pickaxe"
+        ],
+        "price": "50.00 ₴"
+    },
+    {
+        "id":"3",
+        "image":"./images/hephaestus.png",
+        "shortImage":"hephaestus.png",
+        "name":"Hephaestus",
+        "pros": [
+            "Hephaestus set",
+            "Hephaestus sphere",
+            "Hephaestus talisman",
+            "Prefix",
+            "2 set homes",
+            "Hephaestus pickaxe",
+            "15-minute flight"
+        ],
+        "price": "100.00 ₴"
+    },
+    {
+        "id":"4",
+        "image":"./images/hades.png",
+        "shortImage":"hades.png",
+        "name":"Hades",
+        "pros": [
+            "Hades set",
+            "Hades sphere",
+            "Hades talisman",
+            "Prefix",
+            "3 set homes",
+            "Hades pickaxe",
+            "30-minute flight",
+            "Healing and feeding commands"
+        ],
+        "price": "150.00 ₴"
+    },
+    {
+        "id":"5",
+        "image":"./images/zeus.png",
+        "shortImage":"zeus.png",
+        "name":"Zeus",
+        "pros": [
+            "Zeus set",
+            "Zeus sphere",
+            "Zeus talisman",
+            "Prefix",
+            "4 set homes",
+            "Zeus pickaxe",
+            "45-minute flight",
+            "Healing and feeding commands",
+            "Ender Chest whenever you want"
+        ],
+        "price": "500.00 ₴"
+    }
+]
